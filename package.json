@@ -1,0 +1,38 @@
+{
+  "name": "react-router4-redux-express-mongodb-ss",
+  "version": "1.0.0",
+  "description": "react-router4-redux-express-mongodb server-side demo project.",
+  "repository": "https://github.com",
+  "author": "AlexSmith716",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.server.js && webpack --config webpack.config.client.js",
+    "start": "node dist/server.js",
+    "dev:server": "webpack --config webpack.config.server.js --watch",
+    "dev:client": "webpack --config webpack.config.client.js --watch",
+    "dev:start": "nodemon dist/server.js --watch dist/server.js"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.9",
+    "node-fetch": "^1.7.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "source-map-support": "^0.4.16",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "nodemon": "^1.11.0",
+    "webpack": "^3.5.5",
+    "webpack-node-externals": "^1.6.0"
+  }
+}
