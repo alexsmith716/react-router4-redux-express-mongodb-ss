@@ -22,11 +22,16 @@ module.exports = {
         /node_modules/
       ],
       use: [{
-          loader: 'babel-loader',
-          options: {
-            presets: ['react', 'env', 'stage-2']
-          } 
-        }]
+        loader: 'babel-loader',
+        options: {
+          babelrc: false,
+          presets: [
+            ['env', {'targets': { 'browsers': ['last 2 versions'] }}],
+            'stage-2', 
+            'react'
+          ]
+        } 
+      }]
     }]
   },
 
