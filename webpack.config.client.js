@@ -1,23 +1,20 @@
 
 const path = require('path');
-const entryPath = path.resolve(__dirname, 'src');
+const srcPath = path.resolve(__dirname, 'src');
 const outputPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
 
-  context: entryPath,
+  context: srcPath,
 
   entry: {
-    app: './client/index.js',
-    vendor: [
-      'react'
-    ],
+    app: './client/index.js'
   },
 
   output: {
     path: outputPath,
-    filename: 'clientBundle.js'
-    publicPath: '/',
+    filename: 'clientBundle.js',
+    publicPath: '/'
   },
 
   module: {
@@ -31,8 +28,7 @@ module.exports = {
         options: {
           babelrc: false,
           presets: [
-            ['env', {'targets': { 'browsers': ['last 2 versions'] }}],
-            'stage-2', 
+            ['env', {'targets': { 'browsers': ['last 2 versions'] }}], 
             'react'
           ]
         } 

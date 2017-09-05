@@ -8,17 +8,18 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.server.js && webpack --config webpack.config.client.js",
-    "builds": "webpack --config webpack.config.server.js",
     "start": "node dist/serverBundle.js",
     "dev:server": "webpack --config webpack.config.server.js --watch",
     "dev:client": "webpack --config webpack.config.client.js --watch",
     "dev:start": "nodemon dist/serverBundle.js --watch dist/serverBundle.js"
   },
   "dependencies": {
+    "body-parser": "^1.17.2",
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "mongodb": "^2.2.31",
     "mongoose": "^4.11.9",
+    "morgan": "^1.8.2",
     "node-fetch": "^1.7.2",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
