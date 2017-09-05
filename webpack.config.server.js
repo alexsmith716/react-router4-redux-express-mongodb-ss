@@ -1,12 +1,12 @@
 
 const path = require('path');
-const entryPath = path.resolve(__dirname, 'src');
+const srcPath = path.resolve(__dirname, 'src');
 const outputPath = path.resolve(__dirname, 'dist');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
 
-  context: entryPath,
+  context: srcPath,
 
   entry: './server/index.js',
 
@@ -27,7 +27,6 @@ module.exports = {
           babelrc: false,
           presets: [
             ['env', {'targets': { 'browsers': ['last 2 versions'] }}],
-            'stage-2', 
             'react'
           ]
         } 
