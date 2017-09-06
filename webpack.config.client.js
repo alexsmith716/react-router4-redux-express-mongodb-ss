@@ -28,7 +28,7 @@ module.exports = {
         options: {
           babelrc: false,
           presets: [
-            ['env', {'targets': { 'browsers': ['last 2 versions'] }}], 
+            ['env', {'targets': { 'browsers': ['last 2 versions'] }}],
             'react'
           ]
         } 
