@@ -3,11 +3,11 @@ import React from 'react';
 
 export default () => (
 
-  <div style={style}>
+  <div>
 
-    <h1>Error occurred</h1>
+    <h1>Error occurred!</h1>
 
-    <p>Error occurred</p>
+    <p>'500', Internal Server Error. Unable to complete the request.</p>
 
   </div>
   

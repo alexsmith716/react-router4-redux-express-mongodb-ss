@@ -3,12 +3,12 @@ import React from 'react';
 
 export default () => (
 
-    <div style={style}>
-
-        <h1>No Match</h1>
-
-        <p>No Match</p>
-
-    </div>
+  <div>
+  
+    <h1>Page Not Found!</h1>
+  
+    <p>'404', Page Not Found</p>
+  
+  </div>
 
 );

@@ -1,21 +1,21 @@
 
-import dotenv from 'dotenv';
-dotenv.config();
-process.env.NODE_ENV = 'development';
+//import dotenv from 'dotenv';
+//dotenv.config();
+//process.env.NODE_ENV = 'development';
 
 import express from 'express';
 import React from 'react';
+import App from '../shared/App';
+import NoMatch from '../shared/NoMatch';
+import Error from '../shared/Error';
 
 import { StaticRouter as Router, matchPath } from 'react-router';
 import sourceMapSupport from 'source-map-support';
 
-import NoMatch from '../shared/NoMatch';
-import Error from '../shared/Error';
+import render from './render';
 
 import nodefetch from 'node-fetch';
 import morgan from 'morgan';
-
-console.log('JWT_SECRET???: ', process.env.JWT_SECRET);
 
 // ... export a static function 'match' used by Route. 
 // Make an array of routes, reduce using 'match' and then fetch your data
@@ -34,17 +34,16 @@ const app = express();
 
 app.use(morgan('dev'))
 
+// webpack 'dist' is set client-side static
 app.use('/static', express.static('./dist'));
-
 
 app.use((req, res, next) => {
   console.log('>>>>>>>>>>> GOING THROUGH APP NOW <<<<<<<<<<<<<');
   console.log('REQ.method ++: ', req.method);
   console.log('REQ.url ++: ', req.url);
-  // console.log('REQ.headers ++: ', req.headers)
+  console.log('REQ.headers ++: ', req.headers)
   next();
 });
-
 
 // handle any request that comes in using an asterisk match
 app.get('*', (req, res) => {
@@ -56,8 +55,12 @@ app.get('*', (req, res) => {
   // if there is no matching route, render an error page that says: “Page not found”
   // the render function is a wrapper around React’s renderToString 
   // it adds the basic page HTML code around the React component’s HTML (<html>, <head>, <body>, etc.)
+
+  console.log('Matching Route?: ', match)
+
   if (!match) {
-    res.status(404).send(render(<NoMatch />));
+    console.log('No Matching Route: ', match)
+    res.status(404).send(render((<NoMatch/>), null));
     return;
   }
   
@@ -67,27 +70,27 @@ app.get('*', (req, res) => {
   // It never changes its location, which desired for backend, 
   // backend is rendering once and not directly reacting to user interations
   // any errors that accur during process renders an error page
-  nodefetch('https://api.github.com/users/alexsmith716/gists')
+  // nodefetch('https://api.github.com/users/alexsmith716/gists')
+  nodefetch('https://api.github.com/gists')
 
-    .then(r => r.json())
+    .then(response => response.json())
 
-    .then(gists => {
+    .then(data => {
 
-      res.status(200);
-      res.json(gists)
-      /*
+      // res.status(200);
+      // res.json(data);
+
       res.status(200).send(render(
         (
           <Router context={{}} location={req.url}>
-            <App gists={gists} />
+            <App data={data} />
           </Router>
-        ), gists
+        ), data
       ));
-      */
 
     }).catch(err => {
 
-      console.error(err);
+      console.log('Fetch catch err: ', err)
       res.status(500).send(render(<Error />));
 
     });
