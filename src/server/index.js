@@ -1,9 +1,10 @@
 
-//import dotenv from 'dotenv';
-//dotenv.config();
-//process.env.NODE_ENV = 'development';
+// import dotenv from 'dotenv';
+// dotenv.config();
+// process.env.NODE_ENV = 'development';
 
 import express from 'express';
+import path from 'path';
 import React from 'react';
 import App from '../shared/App';
 import NoMatch from '../shared/NoMatch';
@@ -34,9 +35,8 @@ const app = express();
 
 app.use(morgan('dev'))
 
-// webpack 'dist' is set client-side static
 app.use('/static', express.static('./dist'));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('./public'))
 
 app.use((req, res, next) => {
   console.log('>>>>>>>>>>> GOING THROUGH APP NOW <<<<<<<<<<<<<');

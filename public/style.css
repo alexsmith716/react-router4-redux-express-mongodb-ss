@@ -200,6 +200,11 @@ footer {
     background-color: #d9edf7;
 }
 
+.flex-stretch {
+  display: 'flex';
+  align-items: 'stretch';
+}
+
 .col-centered {
   float: none;
   margin: 0 auto;

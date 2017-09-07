@@ -6,7 +6,7 @@ import { Link, Route } from 'react-router-dom';
 
 export default ({ data }) => (
 
-  <div> 
+  <div className='flex-stretch'> 
 
     <RenderList>
 

@@ -8,7 +8,9 @@ module.exports = {
 
   context: srcPath,
 
-  entry: './server/index.js',
+  entry: {
+    app: './server/index.js'
+  },
 
   output: {
     path: outputPath,
