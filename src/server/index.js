@@ -36,6 +36,7 @@ app.use(morgan('dev'))
 
 // webpack 'dist' is set client-side static
 app.use('/static', express.static('./dist'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
   console.log('>>>>>>>>>>> GOING THROUGH APP NOW <<<<<<<<<<<<<');

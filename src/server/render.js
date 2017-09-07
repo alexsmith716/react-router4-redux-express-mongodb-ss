@@ -14,6 +14,8 @@ export default (renderObject, data) => `<!DOCTYPE html>
     <title>react-router4-redux-express-mongodb Demo</title>
     <link href="data:image/x-icon;" type="image/x-icon" rel="shortcut icon">
     <intercept-url pattern="/favicon.ico" access="ROLE_ANONYMOUS"></intercept-url>
+    <link href="/public/vendor/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/public/css/style.css" rel="stylesheet" type="text/css">
 
   </head>
 

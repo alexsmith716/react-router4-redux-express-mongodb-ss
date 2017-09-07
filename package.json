@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "mongodb": "^2.2.31",
@@ -22,8 +23,10 @@
     "morgan": "^1.8.2",
     "node-fetch": "^1.7.2",
     "react": "^15.6.1",
+    "react-bootstrap": "^0.31.3",
     "react-dom": "^15.6.1",
     "react-router": "^4.2.0",
+    "react-router-bootstrap": "^0.24.3",
     "react-router-dom": "^4.2.2",
     "source-map-support": "^0.4.17",
     "whatwg-fetch": "^2.0.3"
