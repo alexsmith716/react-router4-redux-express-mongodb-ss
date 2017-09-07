@@ -71,8 +71,8 @@ app.get('*', (req, res) => {
   // It never changes its location, which desired for backend, 
   // backend is rendering once and not directly reacting to user interations
   // any errors that accur during process renders an error page
-  // nodefetch('https://api.github.com/users/alexsmith716/gists')
-  nodefetch('https://api.github.com/gists')
+  nodefetch('https://api.github.com/users/alexsmith716/gists')
+  // nodefetch('https://api.github.com/gists')
 
     .then(response => response.json())
 
